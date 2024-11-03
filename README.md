@@ -73,4 +73,39 @@ We welcome contributions to this project. Please follow these steps:
 
 This project is licensed under the MIT License.
 
+##Collaboration
+
+This repo contains a main branch as the main branch for all development work.
+
+Each task is to be done on a separate branch and PRs (Pull Requests) open to the main branch. So before you start working on a new task, you first checkout to main with
+
+git checkout main
+
+Then you pull latest change from main to your local environment with
+
+git pull --rebase origin main
+
+Create a new branch to carry out your task with
+
+git branch <branch_name>
+
+After this you checkout to the new branch where you are to carry out your task with 
+git checkout -b <new_branch>
+
+Note: `<branch_name>` should be short, e.g. if you are working on authentication, you can use the name `auth` or `user-auth` for branch name.
+
+When done with your task, you commit your changes and then you are expected to pull latest changes from `main` with 
+
+`git pull --rebase origin main`
+
+ and resolve any merge conflicts if any.
+
+After this, you then push to remote repository, create a PR and request for review.
+
+## Contributors
+
+Ashu Boris
+Njie Ubryne
+Bridgette 
+Nkombou Junior
 
