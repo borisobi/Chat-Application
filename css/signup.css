@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #b86bff;
+    background-color: #e9d5ff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +31,8 @@ body {
 
 .image-section {
     flex: 1;
-    background-image: url('/images/julian-hochgesang-7SV4cz3UFEI-unsplash.jpg');
+    background-color: #aa54fa;
+    background-image: url('/images/dark-eyed-international-student-posing-with-white-laptop-indoor-photo-male-freelancer-typing-keyboard.png');
     background-size: cover;
     background-position: center;
 }
@@ -60,7 +61,7 @@ h1 {
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 label {
@@ -111,7 +112,7 @@ button {
 }
 
 button:hover {
-    background: #7C2BD4;
+    background: #7a25d4;
 }
 
 .signin-link {
