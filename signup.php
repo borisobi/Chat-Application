@@ -76,7 +76,7 @@ session_start();
                 <button type="submit">Sign Up</button>
             </form>
             <div class="signin-link">
-                Already have an account? <a href="login.php">Sign in</a>
+                Already have an account? <a href="../Chat-Application/login.php">Sign in</a>
             </div>
         </div>
         <div class="image-section">

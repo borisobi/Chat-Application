@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $update_status = "UPDATE users SET status='Online' WHERE id=$user_id";
             mysqli_query($db, $update_status);
 
-            header('location: index.php');
+            header('location: chat.php');
             exit();
         } else {
             $_SESSION['error'] = "Wrong email/password combination";

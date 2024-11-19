@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $update_status = "UPDATE users SET status='Online' WHERE id=$user_id";
             mysqli_query($db, $update_status);
             
-            header('location: index.php');
+            header('location: login.php');
             exit();
         } else {
             $_SESSION['error'] = "Registration failed. Please try again.";
