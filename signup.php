@@ -80,7 +80,7 @@ session_start();
             </div>
         </div>
         <div class="image-section">
-
+            
         </div>
     </div>
 

@@ -29,7 +29,7 @@
                 Login to chat with your family and friends across the world. Distance might be the barrier
                 but with chat application you can reach one another.
             </p>
-            <button><a href="../Chat-Application/login.php"></a>Start Chatting</button>
+            <button><a href="../Chat-Application/login.php">Start Chatting</a></button>
         </div>
         <div class="img-box">
             <!-- Fixed image path -->
