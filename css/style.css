@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+}
+
+.button {
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button.primary {
+    background-color: #8A2BE2;
+    color: white;
+    border: none;
+}
+
+.button.secondary {
+    background-color: transparent;
+    color: #8A2BE2;
+    border: none;
+}
+
+/* Hero Section */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 60px 0;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content h1 span {
+    color: #8A2BE2;
+}
+
+.hero-content p {
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.hero-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    position: relative;
+}
+
+.chat-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.chat-card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.chat-bubble {
+    background: rgba(138, 43, 226, 0.1);
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+/* How it works section */
+.how-it-works {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 60px 0;
+    align-items: center;
+}
+
+.how-it-works img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* Contact section */
+.contact {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #8A2BE2;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* User count badge */
+.user-count {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.user-count img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+@media (max-width: 768px) {
+    .hero, .how-it-works {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+}
