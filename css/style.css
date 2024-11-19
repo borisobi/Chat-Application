@@ -108,6 +108,22 @@ nav {
     margin-top: 10px;
 }
 
+.hero-btn{
+    position: absolute;
+    background: #9F2EEF;
+    border-radius: 5px;
+    width: 244px;
+    height: 79px;
+    
+}
+.text-box{
+    display: flex;
+width: 422px;
+flex-direction: column;
+align-items: flex-start;
+gap: 36px;
+}
+
 /* How it works section */
 .how-it-works {
     display: grid;

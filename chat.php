@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Interface</title>
-    <link rel="stylesheet" href="../css/chat.css">
+    <link rel="stylesheet" href="../Chat-Application/css/chat.css">
 </head>
 <body>
     <div class="container">
@@ -12,8 +12,8 @@
         <div class="sidebar">
             <div class="profile">
                 <div class="profile-img"></div>
-                <div class="profile-name">Savannah Nguyen</div>
-                <div class="profile-title">Product Designer</div>
+                <div class="profile-name">Ashu Boris</div>
+                <div class="profile-title">UI-UX Designer</div>
             </div>
 
             <div class="menu-item">General Settings</div>
@@ -32,7 +32,7 @@
         <!-- Main Chat Area -->
         <div class="main-content">
             <div class="chat-header">
-                <div class="chat-title">Jenny Wilson</div>
+                <div class="chat-title">Mr Jovi</div>
                 <div class="chat-actions">
                     <span>🎥</span>
                     <span>📞</span>
@@ -44,14 +44,14 @@
                 <div class="message received">
                     <div class="message-avatar"></div>
                     <div class="message-content">
-                        Hi there, nice to meet you! My name is Jenny Wilson, and I'm from Jakarta.
+                        Mr Jovi, we do how.
                     </div>
                 </div>
 
                 <div class="message sent">
                     <div class="message-avatar"></div>
                     <div class="message-content">
-                        Hi there, nice to meet you too. I'm Savannah Nguyen from Bandung, please to meet you!
+                        Talk i hear you!
                     </div>
                 </div>
             </div>

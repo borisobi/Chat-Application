@@ -32,7 +32,7 @@ body {
 .image-section {
     flex: 1;
     background-color: #aa54fa;
-    background-image: url('/images/dark-eyed-international-student-posing-with-white-laptop-indoor-photo-male-freelancer-typing-keyboard.png');
+    background-image: url('../images/dark-eyed-international-student-posing-with-white-laptop-indoor-photo-male-freelancer-typing-keyboard.png');
     background-size: cover;
     background-position: center;
 }

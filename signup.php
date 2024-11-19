@@ -79,7 +79,9 @@ session_start();
                 Already have an account? <a href="login.php">Sign in</a>
             </div>
         </div>
-        <div class="image-section"></div>
+        <div class="image-section">
+
+        </div>
     </div>
 
     <script>

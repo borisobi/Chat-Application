@@ -13,7 +13,7 @@ if(isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Chat Application</title>
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="../Chat-Application/css/login.css">
     <style>
         .error-message {
             color: #721c24;
@@ -68,9 +68,9 @@ if(isset($_SESSION['user_id'])) {
                         <span class="toggle-password" onclick="togglePassword()">👁️</span>
                     </div>
                 </div>
-                <button type="submit" class="login-button">Log in</button>
+                <button type="submit" class="login-button" name="login_user">Log in</button>
                 <p class="signup-link">
-                    Don't have an account? <a href="signup.php">Sign Up</a>
+                    Don't have an account? <a href="../Chat-Application/signup.php">Sign Up</a>
                 </p>
             </form>
         </div>

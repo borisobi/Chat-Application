@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Application</title>
+    <title>Lets</title>
     <!-- Changed to relative path -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../Chat-Application/css/style.css">
     <!-- Added Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -29,7 +29,7 @@
                 Login to chat with your family and friends across the world. Distance might be the barrier
                 but with chat application you can reach one another.
             </p>
-            <button>Start Chatting</button>
+            <button><a href="../Chat-Application/login.php"></a>Start Chatting</button>
         </div>
         <div class="img-box">
             <!-- Fixed image path -->

@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 // Variable declaration
 $errors = array();
@@ -82,7 +82,7 @@ if (isset($_POST['login_user'])) {
         if (mysqli_num_rows($results) == 1) {
             $user = mysqli_fetch_assoc($results);
             if (password_verify($password, $user['password'])) {
-                $_SESSION['user_id'] = $user['id'];
+                // $_SESSION['user_id'] = $user['id'];
                 $_SESSION['name'] = $user['name'];
                 $_SESSION['success'] = "You are now logged in";
                 
@@ -91,7 +91,7 @@ if (isset($_POST['login_user'])) {
                 $update_status = "UPDATE users SET status='Online' WHERE id=$user_id";
                 mysqli_query($db, $update_status);
                 
-                header('location: index.php');
+                header('location: login.php');
             } else {
                 array_push($errors, "Wrong email/password combination");
             }
@@ -115,4 +115,3 @@ if (isset($_GET['logout'])) {
     unset($_SESSION['name']);
     header("location: login.php");
 }
-?>
