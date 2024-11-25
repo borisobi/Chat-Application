@@ -38,7 +38,7 @@ if(isset($_SESSION['user_id'])) {
 <body>
     <div class="container">
         <div class="image-section">
-            <img src="/images/cheerful-man-using-laptop-while-posing.jpg" alt="Workspace setup with MacBook and monitor">
+            <img src="../Chat-Application/images/login image.png" alt="Workspace setup with MacBook and monitor">
         </div>
         <div class="login-section">
             <h1>Login</h1>

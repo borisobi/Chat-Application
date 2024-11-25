@@ -57,23 +57,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Prepare the SQL query based on whether an avatar was uploaded
         if ($avatar_path) {
             $query = "INSERT INTO users (name, email, password, avatar, status) 
-                     VALUES ('$name', '$email', '$password', '$avatar_path', 'Offline')";
+                     VALUES ('$name', '$email', '$password', '$avatar_path', 'Online')";
         } else {
             $query = "INSERT INTO users (name, email, password, status) 
-                     VALUES ('$name', '$email', '$password', 'Offline')";
+                     VALUES ('$name', '$email', '$password', 'Online')";
         }
 
         if (mysqli_query($db, $query)) {
             $user_id = mysqli_insert_id($db);
+            
+            // Set session variables
             $_SESSION['user_id'] = $user_id;
             $_SESSION['name'] = $name;
-            $_SESSION['success'] = "Registration successful! You are now logged in.";
+            $_SESSION['success'] = "Registration successful! Welcome to your dashboard.";
             
-            // Update user status to Online
-            $update_status = "UPDATE users SET status='Online' WHERE id=$user_id";
-            mysqli_query($db, $update_status);
-            
-            header('location: login.php');
+            // Redirect directly to dashboard/home page
+            header('location: chat.php');
             exit();
         } else {
             $_SESSION['error'] = "Registration failed. Please try again.";

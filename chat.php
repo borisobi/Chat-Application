@@ -65,5 +65,7 @@
             </div>
         </div>
     </div>
+    <script src="/socket.io/socket.io.js"></script>
+<script src="chat-client.js"></script>
 </body>
 </html>
