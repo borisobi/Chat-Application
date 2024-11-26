@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Update the head section -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Interface</title>
     <link rel="stylesheet" href="../Chat-Application/css/chat.css">
-    <script src="../Chat-Application/server.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="Public/chat-client.js"></script>
+
+
 </head>
 <body>
     <div class="container">
@@ -32,14 +37,15 @@
 
         <!-- Main Chat Area -->
         <div class="main-content">
-            <div class="chat-header">
-                <div class="chat-title">Mr Jovi</div>
-                <div class="chat-actions">
-                    <span>🎥</span>
-                    <span>📞</span>
-                    <span>⋮</span>
-                </div>
-            </div>
+        <div class="chat-header">
+    <div class="menu-toggle">☰</div>
+    <div class="chat-title">Mr Jovi</div>
+    <div class="chat-actions">
+        <span>🎥</span>
+        <span>📞</span>
+        <span>⋮</span>
+    </div>
+</div>
 
             <div class="chat-content">
                 <div class="message received">
@@ -65,7 +71,25 @@
             </div>
         </div>
     </div>
-    <script src="/socket.io/socket.io.js"></script>
-<script src="chat-client.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    
+    menuToggle.addEventListener('click', function() {
+        sidebar.classList.toggle('active');
+    });
+
+    // Close sidebar when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+            sidebar.classList.remove('active');
+        }
+    });
+});
+</script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="../Chat-Application/Public/chat-client.js"></script>
 </body>
 </html>

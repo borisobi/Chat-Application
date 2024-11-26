@@ -1,53 +1,58 @@
-// First, we set up the required dependencies
-const express = require('express');  // Web framework for Node.js
+const express = require('express');
+const http = require('http');
+const socketIo = require('socket.io');
+const mysql = require('mysql');
+
 const app = express();
-const http = require('http').createServer(app);  // Create HTTP server
-const io = require('socket.io')(http);  // Initialize Socket.IO
+const server = http.createServer(app);
+const io = socketIo(server);
 
-// Serve static files from 'public' directory
-app.use(express.static('public'));
-
-// Serve the chat.php file when someone visits the root URL
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/chat.php');
+// MySQL Database Setup
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'chatapplication' // Adjust to your database name
 });
 
-// Track connected users using a Map
-const users = new Map();
+db.connect((err) => {
+    if (err) {
+        console.error('Database connection failed:', err);
+    } else {
+        console.log('Connected to the database');
+    }
+});
 
-// Handle Socket.IO connections
+// Serve static files (Optional: if you want static files like JS/CSS here too)
+app.use(express.static('public'));  // Use 'public' or another folder for static files
+
+// Socket.io connection handler
 io.on('connection', (socket) => {
-    // When a user connects
     console.log('A user connected');
-
-    // When a user joins the chat
-    socket.on('user_join', (userData) => {
-        users.set(socket.id, userData);  // Store user data
-        io.emit('user_connected', userData);  // Notify all clients
-    });
-
-    // When a user sends a message
-    socket.on('send_message', (messageData) => {
-        const user = users.get(socket.id);
-        // Broadcast message to all connected clients
-        io.emit('new_message', {
-            content: messageData.content,
-            sender: user,
-            timestamp: new Date()
+    
+    // Listen for incoming messages from clients
+    socket.on('sendMessage', (data) => {
+        // Save message to MySQL database
+        const { sender, recipient, message } = data;
+        const query = 'INSERT INTO messages (sender, recipient, message) VALUES (?, ?, ?)';
+        db.query(query, [sender, recipient, message], (err) => {
+            if (err) {
+                console.error('Error saving message:', err);
+            }
         });
+
+        // Broadcast the message to other clients
+        io.emit('receiveMessage', data);
     });
 
-    // When a user disconnects
+    // Disconnect handler
     socket.on('disconnect', () => {
-        const user = users.get(socket.id);
-        users.delete(socket.id);
-        io.emit('user_disconnected', user);  // Notify others
         console.log('User disconnected');
     });
 });
 
-// Start server on port 3000 or environment port
-const PORT = process.env.PORT || 3000;
-http.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+// Start the server
+const port = 3000; // Use a different port than Apache (default 80)
+server.listen(port, () => {
+    console.log(`Node.js server is running on http://localhost:${port}`);
 });

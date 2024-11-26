@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Set session variables
             $_SESSION['user_id'] = $user_id;
             $_SESSION['name'] = $name;
-            $_SESSION['success'] = "Registration successful! Welcome to your dashboard.";
+            $_SESSION['success'] = "Registration successful! Welcome to your chat.";
             
             // Redirect directly to dashboard/home page
             header('location: chat.php');
